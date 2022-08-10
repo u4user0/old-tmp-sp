@@ -1,0 +1,166 @@
+
+What is preprocessor in c?
+Preprocessor, Its a not a part of the compilation, but its the process that is
+to done just before the compilation. Let me explain with some real time exapmle, You want to make a tea,
+
+so the first thing you have to do is to get the tea leaves, water , sugar and other things which will
+
+to done just before the compilation. Let me explain with some real time exapmle, You want to make a tea,
+
+so the first thing you have to do is to get the tea leaves, water , sugar and other things which willWhat is preprocessor in c?  Preprocessor, Its a not a part of the compilation, but its the process that is
+
+to done just before the compilation. Let me explain with some real time exapmle, You want to make a tea,
+
+so the first thing you have to do is to get the tea leaves, water , sugar and other things which will
+
+be used to make the tea. Here, getting tea, water , sugar is not the part of actual process(making tea)
+
+but its the thing that you need to do just before starting the actual process. Its is important as well
+
+but we cant take it as a part of doing process.
+
+Like this, we need to do some of the things that is required to make the code compile. In general
+
+cases we can call it as pre-requisites before the actual compilation.  In C or C++ all preprocessor
+
+commands begin with a hash symbol (#). It must be the first nonblank character, and for readability,
+
+a preprocessor directive should begin in the first column. The following section lists down all the
+
+important preprocessor directives −
+
+#define - Substitutes a preprocessor macro.
+
+#include - Inserts a particular header from another file.
+
+#undef - Undefines a preprocessor macro.
+
+#ifdef - Returns true if this macro is defined.
+
+#ifndef - Returns true if this macro is not defined.
+
+#if - Tests if a compile time condition is true.
+
+#else - The alternative for #if.
+
+#elif - #else and #if in one statement.
+
+#endif - Ends preprocessor conditional.
+
+#error - Prints error message on stderr.
+
+#pragma - Issues special commands to the compiler, using a standardized method.
+
+---------------------------------------------------------- Preprocessor is a program which processes
+
+something within your code and produces output according to that ..! But how does a preprocessor know
+
+what to process ?  There should be some means in your code to request preprocessor to process it ,
+
+YES..!!! They are called prepocessor directives.
+
+Line of code which starts with ‘#’ are processed by preprocessors . Like #include, #define
+
+#include<stdio.h> is a preprocessor directive , which instructs the preprocessor to paste the text
+
+of the given file( here its stdio.h ) to the current file.  Other common directives are #define and
+
+conditional compilation.
+
+    Conditional compilation - #if <value> checks whether the value is true, if so it will include
+
+    the code until #endif. For instance , this is abundantly used whenever a same piece of code with
+
+    little compromisation, is served between the different customers the company would be dealing with.
+
+    #define - Its macro expansion ( Textual replacement ).
+
+For example:
+
+#define BUFFER_SIZE 100 In your code wherever you use BUFFER_SIZE it gets replaced by 100 int a =
+
+BUFFER_SIZE; a becomes 100 here.
+
+Here #define BUFFER_SIZE 100 is a preprocessing directive, it is not a macro. BUFFER_SIZE is a macro. This
+
+#define preprocessor directive tells the preprocessor to replace the TEXT BUFFER_SIZE  by its defined
+
+value 100.  ---------------------------------------------------------- When the C preprocessor reads
+
+the line #include <stdio.h>, it literally reads the file stdio.h from a system directory and replaces
+
+this line with the contents. Then the stdio.h contains the declarations of printf and other functions,
+
+that tells the C compiler that these functions exist in another file or library.
+
+When you then use printf() in your code, the compiler knows about this function and knows that it doesn't
+
+have to worry about it. (If you didn't include stdio.h, however, the compiler wouldn't have known what the
+
+function looked like at all, which could have been troublesome and the compiler will complain about this.)
+
+An example stdio.h file with printf could look something like this:
+
+/* stdio.h */
+
+// Declaration of printf int printf(const char *format, ...);
+
+// And also a bunch of other function declarations...
+
+---------------------------------------------------------- Preprocessing: processing include files,
+
+conditional compilation instructions and macros.  Compiling: generating assembler source code.  Assembling:
+
+generating machine code and creating object files.  Linking: linking one or more object files or libraries
+
+into a single (usually executable) file Loading: copying the executable obj file from disk to memory and
+
+running it from its entry point.  ---------------------------------------------------------- Preprocessor:
+
+This is a tool that produces input for compilers. It deals with macro-pricessing, file inclusion, language
+
+extention, etc. It's consider part of a compiler, that is sometimes responsible for collecting the source
+
+program and fed to a compiler.
+
+Linker: This is a system software that combines two or more separate object programs or files and provides
+
+the information needed to allow references between them.
+
+Loader: This also a system program and is part of an operation system that is responsible for loading
+
+programs from executable files into memory, preparing them for execution and then executing them.
+
+---------------------------------------------------------- The preprocessor handles “#include”
+
+“#define” “#ifdef”…and so forth. In theory, it outputs a ‘clean’ C++ source module -
+
+without any “#” directives. It might also strip comments and unnecessary white-space.
+
+The compiler takes that code and turns it into an “object file” - which typically contains machine
+
+code for that module - plus a ton of metadata about the variables and functions it created.
+
+The linker takes a collection of object files and some libraries (which are essentially, just more
+
+object files) - and builds them together into a single chunk of machine code which it writes to
+
+an “executable”. Other libraries which are ‘shared’ between programs or linked dynamically
+
+(“.DLL”’s in Windows, “.so”’s in Linux) are merely checked for compatibility.
+
+The loader is invoked by the operating system when you run your program - it pulls in the executable -
+
+hooks up any shared libraries - and starts the program running.
+
+Some programs might pull in more dynamic libraries after they start running - so there is a minimal
+
+version of the linker available to them.
+
+In the case of a small “embedded” computer - with no operating system, there may not be an actual loader.
+
+More detail here:
+
+https://stackoverflow.com/questions/12177796/what-is-the-difference-between-1-preprocessor-linker-2header-file-library
+
+___________________________________
