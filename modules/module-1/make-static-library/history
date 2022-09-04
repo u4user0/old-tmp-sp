@@ -4,3 +4,6 @@ gcc -c add.c -o add.o
 gcc -c sub.c -o sub.o
 ar cr libmylib.a add.o sub.o
 gcc program.c libmylib.a -o exe
+// Go to copy for more details
+gcc prog.c -o dynamicExe -lc
+gcc prog.c -o staticExe -lc --static
