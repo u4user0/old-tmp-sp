@@ -1,0 +1,6 @@
+# Make 2 sub & add program
+# Decalre func prototype in mylib.h file
+gcc -c add.c -o add.o
+gcc -c sub.c -o sub.o
+ar cr libmylib.a add.o sub.o
+gcc program.c libmylib.a -o exe
