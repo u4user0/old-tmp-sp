@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 int main() {
 /*
-	*   Real use mkdir, change a little bit to use this with openat
+	*   Real use mkdirat, change a little bit to use this with openat
 	*   int mkdir(const char *pathname, mode_t mode);
 	*   int mkdirat(int dirfd, const char *pathname, mode_t mode);
 	*   Working code mkdirat.
